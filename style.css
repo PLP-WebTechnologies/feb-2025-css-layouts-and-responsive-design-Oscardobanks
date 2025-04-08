@@ -1,0 +1,173 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Navigation Bar - Flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+/* Main Layout - CSS Grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Content Sections */
+.section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+}
+
+/* Card Grid - Flexbox */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  flex: 1 1 300px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 250px 1fr;
+  }
+  
+  .navbar {
+    padding: 1rem 3rem;
+  }
+  
+  .card {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 300px 1fr;
+  }
+  
+  .card {
+    flex: 1 1 calc(33.333% - 1.5rem);
+  }
+  
+  .nav-menu {
+    gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .nav-item {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  .card {
+    flex: 1 1 100%;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
